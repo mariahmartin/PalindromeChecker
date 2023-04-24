@@ -14,6 +14,7 @@ public void setup()
   }
 }
 
+
 public boolean palindrome(String word)
 {
   String justLetters = noCapitals(noSpaces(onlyLetters(word)));
@@ -55,6 +56,9 @@ public String onlyLetters(String sString) {
   String newString = "";
   for (int i = 0; i < sString.length(); i++)
     if (Character.isLetter(sString.charAt(i)))
+    {
+      newString += sString.substring(i, i+1);
+    } else if (Character.isDigit(sString.charAt(i)))
     {
       newString += sString.substring(i, i+1);
     }
